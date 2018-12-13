@@ -17,14 +17,16 @@
     <header class="mb-4">
         <nav class="navbar bg-dark text-light py-3">
             <div class="col text-center">
-                <h2>Favorite Authors</h2>
+                <a [routerLink]="['']" class="text-light"
+                style="text-decoration: none"
+                ><h2>Quote Ranks</h2></a>
             </div>
         </nav>
     </header>
 
     <main>
         <div class="container">
-            <router-outlet></router-outlet>            
+            <router-outlet></router-outlet>
         </div>
     </main>
     <!-- Optional JavaScript -->

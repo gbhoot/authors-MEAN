@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col text-left"
+    ><h5>Provide a quote by {{ authorName }}</h5></div>
+</div>
+
+<div class="container my-4">
+    <form (submit)="createNewQuote($event)">
+        <div class="col">
+            <div class="row form-group">
+                <label for="quote">Quote:</label>
+                <input type="text" name="quoteD.quote"
+                class="form-control"
+                [(ngModel)]="quoteD.quote">
+            </div>
+            <div class="row form-group">
+                <div class="col text-center">
+                    <a [routerLink]="['/authors', aid, 'quotes']"
+                    class="btn btn-sm btn-secondary">Cancel</a>
+                </div>
+                <div class="col text-center">
+                    <button class="btn btn-sm btn-success"
+                    type="submit"
+                    >Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+    

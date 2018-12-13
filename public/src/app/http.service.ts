@@ -17,8 +17,7 @@ export class HttpService {
     };
 
     createAuthor(author: any) {
-        return this._http.post('/db/v1/authors', 
-            {author: author});
+        return this._http.post('/db/v1/authors', author);
     };
 
     deleteOneAuthor(id: string) {
@@ -27,6 +26,21 @@ export class HttpService {
 
     editOneAuthor(id: string, author: any) {
         return this._http.put('/db/v1/authors/'+ id, 
-            {author: author});
+            author);
+    };
+
+    createQuote(aid: string, quote: any) {
+        return this._http.post('/db/v1/authors/'+ aid +
+            '/quotes', quote);
+    };
+
+    updateQuote(aid: string, qid: string, inc: number) {
+        return this._http.put('/db/v1/authors/'+ aid +
+            '/quotes/'+ qid, {inc: inc});
+    };
+
+    deleteQuote(aid: string, qid: string) {
+        return this._http.delete('/db/v1/authors/'+ aid +
+            '/quotes/'+ qid);
     };
 }

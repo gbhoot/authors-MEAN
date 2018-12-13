@@ -9,6 +9,7 @@ import { HttpService } from '../http.service';
 
 export class HomeComponent implements OnInit {
     authors: any = [];
+    reviews: any = [];
 
     constructor(private _httpService: HttpService) { }
 

@@ -65,7 +65,7 @@ module.exports = {
     update: function(req, res) {
         let aid = req.params['aid'];
         let qid = req.params['qid'];
-        let inc = Number(req.params['inc']);
+        let inc = Number(req.body['inc']);
         Quote.update({_id: qid}, {$inc: {votes: inc}}, function(error) {
             if (error) {
                 console.log("There was an issue: ", error);

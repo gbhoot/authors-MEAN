@@ -10,13 +10,17 @@ import { AppComponent } from './app.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { HomeComponent } from './home/home.component';
+import { QuotesComponent } from './quotes/quotes.component';
+import { NewQuoteComponent } from './new-quote/new-quote.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         CreateComponent,
         EditComponent,
-        HomeComponent
+        HomeComponent,
+        QuotesComponent,
+        NewQuoteComponent
     ],
     imports: [
         BrowserModule,

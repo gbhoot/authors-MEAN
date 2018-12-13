@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-md-2 text-center">
+        <a [routerLink]="['']">
+            <button class="btn btn-primary">Add an Author</button>
+        </a>
+    </div>
+    <div class="col-md-2 text-center">
+        <a [routerLink]="['new']">
+            <button class="btn btn-primary">Add an Author</button>
+        </a>
+    </div>
+    <div class="col"></div>
+</div>
+    
+
+<div class="row">
+    <div class="col text-left"
+    ><h5>All quotes by {{ authorName }}</h5></div>
+</div>
+
+<section>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr class="text-center">
+                <th>No</th>
+                <th>Quote</th>
+                <th>Votes</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let quote of quotes, let i=index"
+            class="text-center">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>"{{ quote.quote }}"</td>
+                <td>{{ quote.votes }}</td>
+                <td>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-sm btn-success"
+                            (click)="updateVotesForQuote(quote._id, 1)"
+                            >Vote Up</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-sm btn-warning"
+                            (click)="updateVotesForQuote(quote._id, -1)"
+                            >Vote Down</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-sm btn-danger"
+                            (click)="updateVotesForQuote(quote._id, -1)"
+                            >Delete</button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    
