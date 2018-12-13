@@ -1,0 +1,38 @@
+<div class="row">
+    <a href="/">
+        <button class="btn btn-primary">Home</button>
+    </a>
+</div>
+
+<div class="row  my-3"><h5>Add a new author:</h5></div>
+
+<section class="p-3">
+    <form (submit)="submitBtnPressed($event)">
+        <div class="row form-group">
+            <label for="fName">First Name:</label>
+            <input type="text" name="authorD.fName"
+            class="form-control"
+            [(ngModel)]="authorD.fName">
+        </div>
+        <div class="row form-group">
+            <label for="lName">Last Name:</label>
+            <input type="text" name="authorD.lName"
+            class="form-control"
+            [(ngModel)]="authorD.lName">
+        </div>
+        <div class="row form-group">
+            <div class="col text-center">
+                <a href="/">
+                    <button class="btn btn-secondary"
+                    >Cancel</button>
+                </a>
+            </div>
+            <div class="col text-center">
+                <button type="submit" class="btn btn-success"
+                >Submit</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+    

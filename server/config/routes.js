@@ -1,4 +1,5 @@
-var authors = require('../controllers/authors.js');
+var path = require('path'),
+    authors = require('../controllers/authors.js');
 
 module.exports = function(app) {
     // Get all the authors
@@ -21,12 +22,18 @@ module.exports = function(app) {
         authors.update(req, res);
     });
 
+    // Remove all authors
     app.delete('/db/v1/authors', function(req, res) {
         authors.destroyAll(req, res);
-    })
+    });
 
     // Remove one author via id
     app.delete('/db/v1/authors/:id', function(req, res) {
         authors.destroyOne(req, res);
-    })
+    });
+
+    // Remaining routes direct to Angular
+    app.all("**", function(req, res, next) {
+        res.sendFile(path.resolve(__dirname, '../../public/dist/public/index.html'));
+    });
 }

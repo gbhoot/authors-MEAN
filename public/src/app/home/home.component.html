@@ -1,0 +1,40 @@
+<div class="row">
+    <a href="/new">
+        <button class="btn btn-primary">Add an Author</button>
+    </a>
+</div>
+
+<div class="row  my-3"><h5>We have quotes by:</h5></div>
+
+<section>
+    <table class="table table-striped">
+        <thead class="thead-dark text-center">
+            <tr>
+                <th>No</th>
+                <th>Author</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let author of authors, let i=index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ author.fName +' '+ author.lName }}</td>
+                <td>
+                    <div class="row">
+                        <div class="col">
+                            <a href="/{{ author._id }}">
+                                <button class="btn btn-warning"
+                                >Edit</button>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-danger"
+                            (click)="deleteBtnPressed(author._id)"
+                            >Delete</button>
+                        </div>                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
