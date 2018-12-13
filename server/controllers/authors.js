@@ -52,7 +52,8 @@ module.exports = {
     update: function(req, res) {
         let inc_author = req.body;
         let aid = req.params.id;
-        Author.updateOne({_id: aid}, {$set, inc_author}, function(error, author) {
+        let opts = { runValidators: true };
+        Author.updateOne({_id: aid}, inc_author, opts, function(error, author) {
             if (error) {
                 console.log("There was an issue: ", error);
                 res.json(error);
