@@ -33,7 +33,7 @@ module.exports = {
     },
 
     create: function(req, res) {
-        let inc_author = req.body['author'];
+        let inc_author = req.body;
         let author = new Author(inc_author);
         author.save(function(error, new_author) {
             if (error) {

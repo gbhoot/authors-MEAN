@@ -49,7 +49,7 @@ module.exports = function(app) {
     });
 
     // Update a quote for specific author (Vote up/down)
-    app.put('/db/v1/authors/:qid/quotes/:aid/:inc', function(req, res) {
+    app.put('/db/v1/authors/:aid/quotes/:qid/:inc', function(req, res) {
         quotes.update(req, res);
     });
 

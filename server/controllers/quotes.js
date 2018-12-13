@@ -76,7 +76,7 @@ module.exports = {
                         console.log("There was an issue: ", error);
                         res.json(error);
                     } else {
-                        Author.update({_id: aid}, {$pull: {quotes: {_id: aid}}}, function(error) {
+                        Author.update({_id: aid}, {$pull: {quotes: {_id: qid}}}, function(error) {
                             if (error) {
                                 console.log("There was an issue: ", error);
                                 res.json(error);
